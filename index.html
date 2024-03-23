@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking Buddies</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script>
+    tailwind.config = {
+  theme: {
+  fontFamily: {
+    'sans': ['ui-sans-serif', 'system-ui', ],
+    'serif': ['Anta', 'Georgia', ],
+    'mono': ['Kode Mono', 'SFMono-Regular',],
+   
+  }
+}
+}
+  </script>
+    
+
+</head>
+<body class="font-sans">
+    <div class="container">
+        <nav class="bg-white border-gray-200 dark:bg-gray-900">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+              <a href="#" class="flex items-center">
+                <!-- <img src="https://s23209.pcdn.co/wp-content/themes/damndelicious2021/images/logo@2x.png" class="h-8 mr-3 " alt="Flowbite Logo" /> -->
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"> <i class="fa-solid fa-utensils"></i> <span class="text-blue-700">T</span>unisien <span  class="text-blue-700">F</span>ood</span>
+              </a>
+              <div class="flex md:order-2">
+                <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1" >
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                </svg>
+                <span class="sr-only">Search</span>
+              </button>
+                <div class="relative hidden md:block">
+                  <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="none" viewBox="0 0 20 20">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                    <span class="sr-only">Search icon</span>
+                  </div>
+                  <input type="text" id="search-navbar" class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
+                </div>
+                <button data-collapse-toggle="navbar-search" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-search" aria-expanded="false">
+                  <span class="sr-only">Open main menu</span>
+                  <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                  </svg>
+              </button>
+              </div>
+              <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+                <div class="relative mt-3 md:hidden">
+                  <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="none" viewBox="0 0 20 20">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                  </div>
+                  <input type="text" id="search-navbar" class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
+                </div>
+                <ul
+                  class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                  <li>
+                    <a href="#"
+                      class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                      aria-current="page">Home</a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <section class="relative h-screen flex flex-col items-center justify-center text-center text-white ">
+    <div class="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
+        <video class="min-w-full min-h-full absolute object-cover"
+            src="/videos/Show Reel.mp4"
+            type="video/mp4" autoplay muted loop></video>
+    </div>
+    <div class="video-content space-y-2 z-10">
+        <h1 class="font-light text-6xl">Tunisian Food</h1>
+        
+    </div>
+</section>
+
+          <main>
+            <div class="relative bg-gray-50 px-6 pt-16 pb-20 lg:px-8 lg:pt-24 lg:pb-28">
+                <div class="absolute inset-0">
+                  <div class="h-1/3 bg-white sm:h-2/3"></div>
+                </div>
+                <div class="relative mx-auto max-w-7xl">
+                  <div class="text-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Explosion of Tastes</h2>
+                    <p class="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
+                        Step into the vibrant world of Tunisian cuisine, where every dish tells a story of tradition, flavor, and warmth. Welcome to our culinary journey through the rich and diverse flavors of Tunisia!</p>
+                  </div>
+                  <div class="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
+              
+                    <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
+                      <div class="flex-shrink-0">
+                        <!-- img 1 -->
+                        <img class="h-72 w-full object-cover" src="https://qph.cf2.quoracdn.net/main-qimg-22c8b3da8ff6e69384c90c307f0b7d9e-pjlq" alt="">
+                      </div>
+                      <div class="flex flex-1 flex-col justify-between bg-white p-6">
+                        <div class="flex-1">
+                          
+                          <a href="#" class="mt-2 block">
+                            <p class="text-xl font-semibold text-gray-900"><span>
+                               Couscous								</span></p>
+                            <p class="mt-3 text-base text-gray-500">From hearty couscous dishes bursting with aromatic spices to mouthwatering tagines simmered to perfection, our collection of Tunisian recipes  promises to transport you to the bustling markets and cozy kitchens of Tunisia.</p>
+                          </a>
+                        </div>
+                        <div class="mt-6 flex items-center">
+                          <div class="flex-shrink-0">
+                            <a href="#">
+                              <span class="sr-only">Roel Aufderehar</span>
+                              <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+                            </a>
+                          </div>
+                          <div class="ml-3">
+                            <p class="text-sm font-medium text-gray-900">
+                              <a href="#" class="hover:underline">Aziz Max</a>
+                            </p>
+                            <div class="flex space-x-1 text-sm text-gray-500">
+                              <time datetime="2020-03-16">Mar 16, 2020</time>
+                              <span aria-hidden="true">·</span>
+                              <span>6 min read</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              
+                    <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
+                      <div class="flex-shrink-0">
+
+                        <!-- img 2 -->
+                        <img class="h-72 w-full object-cover" src="https://www.themediterraneandish.com/wp-content/uploads/2023/02/Lablabi-recipe-10.jpg" alt="">
+                      </div>
+                      <div class="flex flex-1 flex-col justify-between bg-white p-6">
+                        <div class="flex-1">
+                         
+                          <a href="#" class="mt-2 block">
+                            <p class="text-xl font-semibold text-gray-900">Lablebi</p>
+                            <p class="mt-3 text-base text-gray-500">While Lablabi is traditionally enjoyed as a simple stew, it's also incredibly versatile, allowing for endless customization and personalization. Additions such as boiled eggs, olives, capers, or even a drizzle of fiery harissa can elevate the dish to new heights and tailor it to your taste preferences.</p>
+                          </a>
+                        </div>
+                        <div class="mt-6 flex items-center">
+                          <div class="flex-shrink-0">
+                            <a href="#">
+                              <span class="sr-only">Brenna Goyette</span>
+                              <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+                            </a>
+                          </div>
+                          <div class="ml-3">
+                            <p class="text-sm font-medium text-gray-900">
+                              <a href="#" class="hover:underline">Brenna Goyette</a>
+                            </p>
+                            <div class="flex space-x-1 text-sm text-gray-500">
+                              <time datetime="2020-03-10">Mar 10, 2020</time>
+                              <span aria-hidden="true">·</span>
+                              <span>4 min read</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              
+                    <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
+                      <div class="flex-shrink-0">
+
+                        <!-- img 3 -->
+                        <img class="h-72 w-full object-cover" src="https://gourmandiseassia.fr/wp-content/uploads/2019/03/PicsArt_10-28-07.41.19-810x607.jpg" alt="">
+                      </div>
+                      <div class="flex flex-1 flex-col justify-between bg-white p-6">
+                        <div class="flex-1">
+                         
+                          <a href="#" class="mt-2 block">
+                            <p class="text-xl font-semibold text-gray-900">Kefteji</p>
+                            <p class="mt-3 text-base text-gray-500">Kaftaji is a traditional Tunisian dish that features a medley of vegetables cooked with spices. It is a flavorful and vibrant dish that reflects the rich culinary heritage of Tunisia. The primary ingredients typically include bell peppers, tomatoes, onions, garlic, and sometimes eggplant or zucchini. These vegetables are sautéed together in olive oil and seasoned with a blend of spices such as cumin, paprika, and sometimes chili flakes or harissa for heat.</p>
+                          </a>
+                        </div>
+                        <div class="mt-6 flex items-center">
+                          <div class="flex-shrink-0">
+                            <a href="#">
+                              <span class="sr-only">Daniela Metz</span>
+                              <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+                            </a>
+                          </div>
+                          <div class="ml-3">
+                            <p class="text-sm font-medium text-gray-900">
+                              <a href="#" class="hover:underline">Daniela Metz</a>
+                            </p>
+                            <div class="flex space-x-1 text-sm text-gray-500">
+                              <time datetime="2020-02-12">Feb 12, 2020</time>
+                              <span aria-hidden="true">·</span>
+                              <span>11 min read</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              
+                  </div>
+                </div>
+              </div>
+
+              <!--  -->
+
+              <!-- forked from: https://codepen.io/cuonoj/pen/JjPmMaB -->
+
+
+          </main>
+
+        <!-- second hero section -->
+
+        <!-- https://gist.github.com/goodreds/3d044027175954984fb96c7407a955ab -->
+
+<!-- Container -->
+<div class="relative flex flex-col items-center mx-auto lg:flex-row-reverse lg:max-w-5xl lg:mt-12 xl:max-w-6xl ">
+
+    <!-- Image Column -->
+    <div class="w-full h-64 lg:w-1/2 lg:h-auto">
+        <img class="h-full w-full object-cover" src="https://www.aljazeera.com/wp-content/uploads/2017/12/8dbb9306a22d49f49cdc0893840783bf_18.jpeg?resize=730%2C410&quality=80" alt="Winding mountain road">
+    </div>
+    <!-- Close Image Column -->
+
+    <!-- Text Column -->
+    <div
+        class="max-w-lg bg-white md:max-w-2xl md:z-10 md:shadow-lg md:absolute md:top-0 md:mt-48 lg:w-3/5 lg:left-0 lg:mt-20 lg:ml-20 xl:mt-24 xl:ml-12 opacity-85 rounded-lg">
+        <!-- Text Wrapper -->
+        <div class="flex flex-col p-12 md:px-16">
+            <h2 class="text-2xl font-medium uppercase text-gray-900 lg:text-4xl">Hey I'm Norra 🍴🍗 </h2>
+            <p class="mt-4">
+                Come join me in my culinary adventures where we'll be using simple, fresh ingredients and transforming them into sophisticated and elegant meals for the everyday home cook.
+            </p>
+            <!-- Button Container -->
+            <div class="mt-8">
+                <a href="#"
+                    class="flex items-center justify-center w-1/2 px-8 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-zinc-500 border border-transparent rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue md:py-4 md:text-lg md:px-10">More About me</a>
+            </div>
+        </div>
+        <!-- Close Text Wrapper -->
+    </div>
+    <!-- Close Text Column -->
+
+</div>
+
+<!-- reviews -->
+<section id="testimonials" aria-label="What our customers are saying" class="bg-slate-50 py-20 sm:py-32">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl md:text-center">
+        <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">What Our Customers Are Saying</h2>
+      </div>
+      <ul role="list"
+        class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
+        <li>
+          <ul role="list" class="flex flex-col gap-y-6 sm:gap-y-8">
+            <li>
+              <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10"><svg aria-hidden="true"
+                  width="105" height="78" class="absolute left-6 top-6 fill-slate-100">
+                  <path
+                    d="M25.086 77.292c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622C1.054 58.534 0 53.411 0 47.686c0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C28.325 3.917 33.599 1.507 39.324 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Zm54.24 0c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622-2.11-4.52-3.164-9.643-3.164-15.368 0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C82.565 3.917 87.839 1.507 93.564 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Z">
+                  </path>
+                </svg>
+                <blockquote class="relative">
+                  <p class="text-lg tracking-tight text-slate-900">Tried out this recipe last night, and I have to say, it was a hit with the family! The flavors were spot on, and the instructions were easy to follow. Will definitely be adding this one to our regular rotation</p>
+                </blockquote>
+                <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+                  <div>
+                    <div class="font-display text-base text-slate-900">Hamza </div>
+                  </div>
+                  <div class="overflow-hidden rounded-full bg-slate-50">
+                    <img alt="" class="h-14 w-14 object-cover" style="color:transparent" src="https://randomuser.me/api/portraits/men/15.jpg">
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul role="list" class="flex flex-col gap-y-6 sm:gap-y-8">
+            <li>
+              <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10"><svg aria-hidden="true"
+                  width="105" height="78" class="absolute left-6 top-6 fill-slate-100">
+                  <path
+                    d="M25.086 77.292c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622C1.054 58.534 0 53.411 0 47.686c0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C28.325 3.917 33.599 1.507 39.324 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Zm54.24 0c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622-2.11-4.52-3.164-9.643-3.164-15.368 0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C82.565 3.917 87.839 1.507 93.564 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Z">
+                  </path>
+                </svg>
+                <blockquote class="relative">
+                  <p class="text-lg tracking-tight text-slate-900">I gave this recipe a shot for dinner tonight, and unfortunately, it didn't quite meet my expectations. The flavors seemed a bit bland, and the cooking times were off. I might try tweaking it next time to see if I can get better results.</p>
+                </blockquote>
+                <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+                  <div>
+                    <div class="font-display text-base text-slate-900">Layla</div>
+                  </div>
+                  <div class="overflow-hidden rounded-full bg-slate-50">
+                    <img alt="" class="h-14 w-14 object-cover" style="color:transparent" src="https://randomuser.me/api/portraits/women/15.jpg">
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul role="list" class="flex flex-col gap-y-6 sm:gap-y-8">
+            <li>
+              <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10"><svg aria-hidden="true"
+                  width="105" height="78" class="absolute left-6 top-6 fill-slate-100">
+                  <path
+                    d="M25.086 77.292c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622C1.054 58.534 0 53.411 0 47.686c0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C28.325 3.917 33.599 1.507 39.324 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Zm54.24 0c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622-2.11-4.52-3.164-9.643-3.164-15.368 0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C82.565 3.917 87.839 1.507 93.564 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Z">
+                  </path>
+                </svg>
+                <blockquote class="relative">
+                  <p class="text-lg tracking-tight text-slate-900">Wow, just whipped up this recipe for a potluck, and it was a huge hit! Everyone kept asking for the recipe, and I was proud to say it wasn't even mine. Definitely a crowd-pleaser, and I'll be bookmarking it for future gatherings.</p>
+                </blockquote>
+                <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+                  <div>
+                    <div class="font-display text-base text-slate-900">Salah</div>
+                  </div>
+                  <div class="overflow-hidden rounded-full bg-slate-50">
+                    <img alt="" class="h-14 w-14 object-cover" style="color:transparent" src="https://randomuser.me/api/portraits/men/10.jpg">
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- blog section -->
+
+<div class="w-full bg-white rounded-lg border p-2 my-4 mx-6 blog">
+
+    <h3 class="font-bold">Discussion</h3>
+
+    <form class="blog2">
+
+        <div class="flex flex-col reviews">
+
+            <div class="border rounded-md p-3 ml-3 my-3">
+                <div class="flex gap-3 items-center">
+
+                    <img alt="" class="h-14 w-14 object-cover rounded-full bg-slate-50" style="color:transparent" src="https://randomuser.me/api/portraits/men/10.jpg">
+
+                    <h3 class="font-bold">
+                       Salah
+                    </h3>
+                </div>
+
+
+                <p class="text-gray-600 mt-2">
+                    Delicious Dish!
+                </p>
+                <i class="fa-regular fa-heart"></i>
+
+            </div>
+
+            <div class="border rounded-md p-3 ml-3 my-3">
+                <div class="flex gap-3 items-center">
+
+                    <img alt="" class="h-14 w-14 object-cover rounded-full bg-slate-50" style="color:transparent" src="https://randomuser.me/api/portraits/women/15.jpg">
+
+                    <h3 class="font-bold">
+                      Layla
+
+                    </h3>
+                </div>
+
+
+                <p class="text-gray-600 mt-2">
+                    So spicy but i loved it !
+                    
+                </p>
+                <i class="fa-regular fa-heart"></i>
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+        <div class="w-full px-3 my-2">
+            <textarea
+                class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"
+                name="body" placeholder='Type Your Comment' required></textarea>
+        </div>
+
+        <div class="w-full flex justify-end px-3">
+            <input type='submit' class="px-2.5 py-1.5 rounded-md text-white text-sm bg-indigo-500" value='Post Comment'>
+        </div>
+    </form>
+
+
+</div>
+
+
+
+
+<!-- FOOTER -->
+<footer class="relative bg-blueGray-200 pt-8 pb-6">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap text-left lg:text-left">
+        <div class="w-full lg:w-6/12 px-4">
+          <h4 class="text-3xl fonat-semibold text-blueGray-700">Let's keep in touch!</h4>
+          <h5 class="text-lg mt-0 mb-2 text-blueGray-600">
+            Find us on any of these platforms, we respond 1-2 business days.
+          </h5>
+          <div class="mt-6 lg:mb-0 mb-6">
+            <button class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+              <i class="fab fa-twitter"></i></button><button class="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+              <i class="fab fa-facebook-square"></i></button><button class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+              <i class="fab fa-dribbble"></i></button><button class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+              <i class="fab fa-github"></i>
+            </button>
+          </div>
+        </div>
+        <div class="w-full lg:w-6/12 px-4">
+          <div class="flex flex-wrap items-top mb-6">
+            <div class="w-full lg:w-4/12 px-4 ml-auto">
+              <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Useful Links</span>
+              <ul class="list-unstyled">
+                <li>
+                  <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/presentation?ref=njs-profile">About Us</a>
+                </li>
+                <li>
+                  <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://blog.creative-tim.com?ref=njs-profile">Blog</a>
+                </li>
+                <li>
+                  <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.github.com/creativetimofficial?ref=njs-profile">Github</a>
+                </li>
+                <li>
+                  <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile">Free Products</a>
+                </li>
+              </ul>
+            </div>
+            <div class="w-full lg:w-4/12 px-4">
+              <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Other Resources</span>
+              <ul class="list-unstyled">
+                <li>
+                  <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-profile">MIT License</a>
+                </li>
+                <li>
+                  <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/terms?ref=njs-profile">Terms &amp; Conditions</a>
+                </li>
+                <li>
+                  <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/privacy?ref=njs-profile">Privacy Policy</a>
+                </li>
+                <li>
+                  <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us?ref=njs-profile">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="my-6 border-blueGray-300">
+      <div class="flex flex-wrap items-center md:justify-between justify-center">
+        <div class="w-full md:w-4/12 px-4 mx-auto text-center">
+          <div class="text-sm text-blueGray-500 font-semibold py-1">
+            Copyright © <span id="get-current-year">2024</span><a href="https://www.creative-tim.com/product/notus-js" class="text-blueGray-500 hover:text-gray-800" target="_blank"> 
+            <a href="https://www.creative-tim.com?ref=njs-profile" class="text-blueGray-500 hover:text-blueGray-800">Tunisian Team</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="app.js"></script>
+</body>
+</html>
