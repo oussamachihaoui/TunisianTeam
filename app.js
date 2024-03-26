@@ -3,7 +3,8 @@ let commentInput = document.querySelector("[name = 'comment']");
 console.log(commentInput);
 
 let reviews = document.querySelector(".reviews");
-
+// let textArea = form.querySelector('textarea[name="body"]');
+// console.log(textArea);
 // console.log(form);
 
 for (let i = 0; i < heartBtns.length; i++) {
@@ -98,6 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
     heartIcons.setAttribute("class", "fa-regular fa-heart");
     commentDiv.appendChild(heartIcons);
     reviews.appendChild(commentDiv);
+    textArea.innerHTML = "";
     console.log(commentDiv);
   }
 });
